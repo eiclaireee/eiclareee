@@ -1,0 +1,39 @@
+<FORYOU html>
+<html>
+<body>
+
+<h2>Could I tell you one of my little secrets?</h2>
+
+<p id="demo">If you're curious, try to find out below</p>
+<img id="secretImage" src="" alt="" style="display:none; width:200px; height:200px;">
+<br>
+<button type="button" id="myButton" onclick="changeText()">Press Me!</button>
+
+<script>
+let clickCount = 0;
+
+function changeText() {
+  const messages = [
+    "Are you ready for a surprise?",
+    "Guess what I have in mind!",
+    "Something special is coming!",
+    "Hold on, it's almost here!",
+    "I miss you <3 !"
+  ];
+
+  const images = [
+    "https://i.pinimg.com/originals/b6/ef/9e/b6ef9ed99f9cd60ca35b6739957fed64.png",
+    "https://th.bing.com/th/id/R.042ebc5a2b688aee1e45092cf272b29d?rik=fS4VwKl%2fvTgj3w&riu=http%3a%2f%2fwww.theartmad.com%2fwp-content%2fuploads%2f2015%2f05%2fAnime-Chibi-2.png&ehk=TmjUpIqeetxmEjVJwqLf1J91IafowAHiEArceCFC74A%3d&risl=&pid=ImgRaw&r=0",
+    "https://th.bing.com/th/id/OIP.TPW_ofClTlNUuO2ki1B85wHaIt?pid=ImgDet&w=208&h=245&c=7&dpr=1,5",
+    "https://th.bing.com/th/id/OIP.as1BALiqkap3ptSbf8rmfgHaI6?rs=1&pid=ImgDetMain",  "https://i.pinimg.com/originals/32/09/15/320915992153abde2070a076552344e7.gif"
+  ];
+
+  document.getElementById("demo").innerHTML = messages[clickCount % messages.length];
+  document.getElementById("secretImage").src = images[clickCount % images.length];
+  document.getElementById("secretImage").style.display = 'block';
+  clickCount++;
+}
+</script>
+
+</body>
+</html>
